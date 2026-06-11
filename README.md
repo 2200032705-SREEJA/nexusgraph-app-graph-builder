@@ -165,25 +165,6 @@ src/
 ```
 
 ---
-## 💡 Key Design Decisions
-
-### Why React Flow?
-
-React Flow provides a flexible and scalable solution for graph visualization while supporting advanced node interactions and graph editing features.
-
-### Why Zustand?
-
-Zustand offers lightweight and efficient client-side state management without introducing unnecessary complexity.
-
-### Why TanStack Query?
-
-TanStack Query simplifies asynchronous state management through caching, retries, loading states, and automatic refetching.
-
-### Why TypeScript?
-
-TypeScript improves maintainability, scalability, and developer experience through strong typing and compile-time validation.
-
----
 
 ## ⚡ Available Scripts
 
