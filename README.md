@@ -189,7 +189,7 @@ TypeScript improves maintainability, scalability, and developer experience throu
 
 ### Development
 
-```bash
+```
 npm run dev
 ```
 
@@ -207,7 +207,7 @@ npm run preview
 
 ### Linting
 
-```bash
+```
 npm run lint
 ```
 
@@ -227,13 +227,13 @@ https://github.com/2200032705-SREEJA/nexusgraph-app-graph-builder
 
 ### Install Dependencies
 
-```bash
+```
 npm install
 ```
 
 ### Start Development Server
 
-```bash
+```
 npm run dev
 ```
 
@@ -265,4 +265,3 @@ npm run dev
 
 **Sreeja Penumudi**
 
-Built as part of the Frontend Intern Take-Home Assignment using React, TypeScript, React Flow, Zustand, and TanStack Query.
