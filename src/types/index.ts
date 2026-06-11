@@ -2,6 +2,8 @@ export type NodeStatus = 'healthy' | 'degraded' | 'down' | 'unknown';
 export type NodeKind = 'service' | 'database' | 'gateway' | 'queue';
 
 export interface NodeData {
+  [key: string]: unknown;
+
   label: string;
   kind: NodeKind;
   status: NodeStatus;
