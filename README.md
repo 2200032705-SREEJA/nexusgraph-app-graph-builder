@@ -166,34 +166,6 @@ src/
 ```
 
 ---
-
-## ✅ Assignment Requirements Coverage
-
-| Requirement              | Status |
-| ------------------------ | ------ |
-| React + Vite             | ✅      |
-| TypeScript Strict Mode   | ✅      |
-| React Flow Integration   | ✅      |
-| Drag Nodes               | ✅      |
-| Node Selection           | ✅      |
-| Delete Selected Node     | ✅      |
-| Zoom & Pan               | ✅      |
-| Dotted Background Canvas | ✅      |
-| Service Node Inspector   | ✅      |
-| Status Badge             | ✅      |
-| Config & Runtime Tabs    | ✅      |
-| Synced Slider/Input      | ✅      |
-| TanStack Query           | ✅      |
-| Zustand State Management | ✅      |
-| Loading States           | ✅      |
-| Error States             | ✅      |
-| Graph Refetching         | ✅      |
-| Responsive Layout        | ✅      |
-| Mobile Drawer Support    | ✅      |
-| TypeScript Type Safety   | ✅      |
-
----
-
 ## 💡 Key Design Decisions
 
 ### Why React Flow?
@@ -242,7 +214,7 @@ npm run lint
 
 ### Type Checking
 
-```bash
+```
 npm run typecheck
 ```
 
