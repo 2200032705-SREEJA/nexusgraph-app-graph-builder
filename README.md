@@ -14,7 +14,6 @@ This project allows users to visualize application architectures, inspect servic
 
 ## 📸 Application Preview
 
-> Add your screenshot here
 <img width="1527" height="815" alt="Screenshot 2026-06-11 202946" src="https://github.com/user-attachments/assets/0a5badb1-8eda-4b14-8695-16aa20bbdeda" />
 
 
