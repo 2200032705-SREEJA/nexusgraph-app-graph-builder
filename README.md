@@ -1,49 +1,297 @@
-# NexusGraph — App Graph Builder
+# 🚀 App Graph Builder
 
-A dark-theme infrastructure graph builder with service node inspection, built as a frontend intern take-home task.
+A responsive application graph visualization tool built with **React**, **TypeScript**, **React Flow (xyflow)**, **TanStack Query**, and **Zustand**.
 
-## Setup
+This project allows users to visualize application architectures, inspect service nodes, manage graph interactions, and explore infrastructure relationships through an interactive graph-based UI.
+
+---
+
+## 🌐 Live Demo
+
+🔗 **Deployment:** https://nexusgraph-app-graph-builder.vercel.app/
+
+---
+
+## 📸 Application Preview
+
+> Add your screenshot here
+<img width="1527" height="815" alt="Screenshot 2026-06-11 202946" src="https://github.com/user-attachments/assets/0a5badb1-8eda-4b14-8695-16aa20bbdeda" />
+
+
+---
+
+## ✨ Features
+
+### 🎯 Interactive Graph Canvas
+
+* Interactive graph built using React Flow
+* Drag and reposition nodes
+* Select nodes to inspect details
+* Delete selected nodes using Delete/Backspace
+* Zoom and pan support
+* Fit view support
+* Dotted background canvas
+
+### 🔍 Service Node Inspector
+
+* Status indicators (Healthy, Degraded, Down)
+* Config and Runtime tabs
+* Editable node name
+* Editable description
+* Synced slider and numeric input
+* Updates reflected directly in graph state
+
+### 📦 Application Management
+
+* Multiple application selection
+* Dynamic graph loading
+* Cached data fetching using TanStack Query
+* Loading and error handling states
+* Graph refetches when application changes
+
+### 📱 Responsive Design
+
+* Desktop layout with side panels
+* Mobile-friendly drawer-based inspector
+* Adaptive layout for smaller screens
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology          | Purpose                 |
+| ------------------- | ----------------------- |
+| React + Vite        | Frontend Framework      |
+| TypeScript          | Type Safety             |
+| React Flow (xyflow) | Graph Visualization     |
+| TanStack Query      | Server State Management |
+| Zustand             | Client State Management |
+| shadcn/ui           | UI Components           |
+| Tailwind CSS        | Styling                 |
+
+---
+
+## 🏗️ Architecture Overview
+
+The application is divided into three major layers:
+
+### 📡 Server State Layer
+
+Managed using **TanStack Query**:
+
+* Fetching application data
+* Fetching graph data
+* Caching responses
+* Loading states
+* Error handling
+* Automatic refetching
+
+### 🐻 Client State Layer
+
+Managed using **Zustand**:
+
+* Selected application
+* Selected node
+* Active inspector tab
+* Mobile panel visibility
+
+### 🎨 Presentation Layer
+
+Built using:
+
+* React Flow
+* shadcn/ui
+* Tailwind CSS
+
+---
+
+## 🔄 Application Flow
+
+1. User selects an application from the Applications panel.
+2. TanStack Query fetches graph data from mock APIs.
+3. React Flow renders nodes and edges.
+4. User selects a node.
+5. Node Inspector displays node configuration.
+6. User updates values through inspector controls.
+7. Changes are reflected immediately in graph state.
+
+---
+
+## 🔌 Mock API Implementation
+
+The project uses in-memory mock APIs with simulated network latency.
+
+### Available Endpoints
+
+```http
+GET /apps
+GET /apps/:appId/graph
+```
+
+### Supported States
+
+* Loading State
+* Success State
+* Error State
+* Cached State
+
+Network latency is simulated using Promise-based delays to mimic real-world API behavior.
+
+---
+
+## 📁 Project Structure
+
+```txt
+src/
+├── components/
+│   ├── canvas/
+│   ├── layout/
+│   ├── inspector/
+│   ├── nodes/
+│   └── ui/
+│
+├── hooks/
+│   └── queries/
+│
+├── store/
+│
+├── mocks/
+│
+├── types/
+│
+├── lib/
+│
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+## ✅ Assignment Requirements Coverage
+
+| Requirement              | Status |
+| ------------------------ | ------ |
+| React + Vite             | ✅      |
+| TypeScript Strict Mode   | ✅      |
+| React Flow Integration   | ✅      |
+| Drag Nodes               | ✅      |
+| Node Selection           | ✅      |
+| Delete Selected Node     | ✅      |
+| Zoom & Pan               | ✅      |
+| Dotted Background Canvas | ✅      |
+| Service Node Inspector   | ✅      |
+| Status Badge             | ✅      |
+| Config & Runtime Tabs    | ✅      |
+| Synced Slider/Input      | ✅      |
+| TanStack Query           | ✅      |
+| Zustand State Management | ✅      |
+| Loading States           | ✅      |
+| Error States             | ✅      |
+| Graph Refetching         | ✅      |
+| Responsive Layout        | ✅      |
+| Mobile Drawer Support    | ✅      |
+| TypeScript Type Safety   | ✅      |
+
+---
+
+## 💡 Key Design Decisions
+
+### Why React Flow?
+
+React Flow provides a flexible and scalable solution for graph visualization while supporting advanced node interactions and graph editing features.
+
+### Why Zustand?
+
+Zustand offers lightweight and efficient client-side state management without introducing unnecessary complexity.
+
+### Why TanStack Query?
+
+TanStack Query simplifies asynchronous state management through caching, retries, loading states, and automatic refetching.
+
+### Why TypeScript?
+
+TypeScript improves maintainability, scalability, and developer experience through strong typing and compile-time validation.
+
+---
+
+## ⚡ Available Scripts
+
+### Development
 
 ```bash
-npm install
 npm run dev
 ```
 
-Other scripts:
-```bash
-npm run build      # production build
-npm run preview    # preview production build
-npm run lint       # ESLint
-npm run typecheck  # tsc --noEmit
+### Production Build
+
+```
+npm run build
 ```
 
-## Key Decisions
+### Preview Production Build
 
-**Unique Design Identity — "Terminal Dark"**
-Rather than a generic grey dark mode, NexusGraph uses a deep navy palette (`hsl(222, 25%, 7%)`) with a purple/indigo primary accent and neon green cost badges. The typography is JetBrains Mono for identifiers and Inter for prose, giving an IDE-like feel.
+```
+npm run preview
+```
 
-**ReactFlow Integration**
-- Custom `ServiceNode` component wraps ReactFlow's node API, rendering real resource metrics inline (CPU, Memory, Disk, Replicas)
-- Node selection synced bidirectionally: clicking the canvas selects the node; Zustand propagates to the inspector
-- Delete/Backspace removes selected node + its connected edges
-- "Add Node" FAB creates a new service node in-place
+### Linting
 
-**TanStack Query**
-- `/apps` and `/apps/:appId/graph` are simulated with `setTimeout` in `src/mocks/api.ts`
-- Switching apps invalidates the graph query — fresh fetch with loading skeleton
-- 5% random error rate on graph fetch to demonstrate error state
+```bash
+npm run lint
+```
 
-**Zustand**
-- Minimal store: `selectedAppId`, `selectedNodeId`, `isMobilePanelOpen`, `activeInspectorTab`
-- Inspector edits are local state until "Apply Changes" which writes back via `queryClient.setQueryData`
+### Type Checking
 
-**Responsive**
-- Right panel becomes a slide-over drawer on mobile (`lg:hidden` / `lg:flex`)
-- Controlled by `isMobilePanelOpen` in Zustand
+```bash
+npm run typecheck
+```
 
-## Known Limitations
+---
 
-- No real MSW setup (uses simple Promise delays instead)
-- Minimap not enabled (keeps UI clean)
-- Node positions reset on app switch (graph comes fresh from the mock)
-- `tsconfig` `noUnusedLocals` may fire on some placeholder components
+## 🚀 Local Setup
+
+### Clone Repository
+https://github.com/2200032705-SREEJA/nexusgraph-app-graph-builder
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🚧 Known Limitations
+
+* Data persistence is currently in-memory only
+* Graph changes are not saved after page refresh
+* Mock APIs are used instead of a real backend
+* Authentication and authorization are not implemented
+
+---
+
+## 🔮 Future Improvements
+
+* Additional custom node types
+* Persistent graph storage
+* Real backend integration
+* Keyboard shortcuts
+* Node grouping
+* Graph export/import
+* Real-time collaboration
+* Advanced graph editing tools
+
+---
+
+## 👩‍💻 Author
+
+**Sreeja Penumudi**
+
+Built as part of the Frontend Intern Take-Home Assignment using React, TypeScript, React Flow, Zustand, and TanStack Query.
